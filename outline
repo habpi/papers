@@ -1,0 +1,31 @@
+I. Introduction
+    A. Motivation
+    B. Educational Usage
+    C. Organization of the Paper
+
+II. Construction
+    A. Parts List
+    B. Box Dimensions
+    C. Wiring the Sense Hat
+    D. Sensors
+
+III. Habpi Software
+    A. Overview
+    B. Raspberry Pi Setup
+    C. Setting up HabPi
+    D. Creating Experiments
+    E. Habpi User Interface
+        i.) On the Sense HAT
+                          Date
+           Current D/T           Time
+                          Run
+        ii.) Via Built-In webserver
+
+IV. Performance and Flight Data
+    A. Sense HAT Challenges
+    B. Temperature Data
+       i.)  Sense HAT
+       ii.) DS18B20
+    C. Pressure Data
+    D. Accelerometer
+    E. Magnetometer
