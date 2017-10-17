@@ -1,0 +1,70 @@
+\documentclass[journal]{new-aiaa}
+%\documentclass[conf]{new-aiaa} for conference papers
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{longtable,tabularx}
+\setlength\LTleft{0pt} 
+
+\title{HabPi: An Opensource Extensible Framework for High Altitude
+Balloon Data Collection}
+
+\author{Robert Lowe\footnote{Assistant Professor, Division of
+Mathematics and Computer Science, Maryville College, 502 East Lamar
+Alexander Parkway, Maryville TN 37804}}
+\affil{Maryville College}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+One of the obstacles facing beginning high altitude balloonists
+is the cost of the myriad sensors required to acquire usable data.
+In addition to this problem, aligning sensor data after a flight can
+prove tricky.  Finally, there is a harsh reality we all face.  Trees
+exist, and payload stacks are attracted to trees!
+
+HabPi is an open source project which attempts to address these
+problems.  This is a sensor array which is based on a raspberry pi,
+a sense hat, and several one-wire sensors.  The sensors are all
+synchronized, so data registration is not a problem.  HabPi also acts
+as a wifi access point which makes data retrieval possible even when
+the stack is trapped in a tree (or is otherwise inaccessible).  HabPi
+is a simple extensible framework which allows users to add additional
+experiments beyond the default setup.  The default setup provides
+temperature, pressure, magnetometer, gyroscope, accelerometer, and
+video imaging all for less than \$200.00.
+\end{abstract}
+
+\section{Introduction}
+\subsection{Motivation}
+\subsection{Educational Use}
+\subsection{Organization of this Paper}
+
+\section{Construction}
+\subsection{Parts List}
+\subsection{Box Dimensions}
+\subsection{Wiring the Sense Hat}
+\subsection{Wiring the 1-Wire Sensor Array}
+
+\section{Habpi Software}
+\subsection{Overview}
+\subsection{Raspberry Pi Setup}
+\subsection{Setting up HabPi}
+\subsection{Creating Experiments}
+\subsection{HabPi User Interface}
+\subsubsection{Sense HAT Joystick}
+\subsubsection{Built-In webserver}
+
+\section{Performance and Flight Data}
+\subsection{Sense HAT Challenges}
+\subsection{Temperature Data}
+\subsubsection{Sense HAT}
+\subsubsection{DS18B20}
+\subsection{Other Sensors}
+
+\end{document}
