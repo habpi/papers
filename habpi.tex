@@ -32,8 +32,8 @@ prove tricky.  Finally, there is a harsh reality we all face.  Trees
 exist, and payload stacks are attracted to trees!
 
 HabPi is an open source project which attempts to address these
-problems.  This is a sensor array which is based on a raspberry pi,
-a sense hat, and several one-wire sensors.  The sensors are all
+problems.  This is a sensor array which is based on a Aaspberry Pi,
+a Sense HAT, and several one-wire sensors.  The sensors are all
 synchronized, so data registration is not a problem.  HabPi also acts
 as a wifi access point which makes data retrieval possible even when
 the stack is trapped in a tree (or is otherwise inaccessible).  HabPi
@@ -72,11 +72,11 @@ thus eliminating the challenges of synchronizing data across disparate
 sensors.
 
 A final advantage present in the current system is in the recovery of
-data.  If the payload can be recovered, then the onboard computer is
+data.  If the payload can be recovered, then the on board computer is
 sufficient to process the information obtained during the flight.  If
 the payload is not recoverable, the HabPi system provides a mechanism
 for wireless transmission of the data.  Thus, so long as a user can
-get wthin a few hundred feet of the payload, the data will always be
+get to within a few hundred feet of the payload, the data will always be
 recoverable and usable. (Provided, of course, the payload lands
 intact.)
 
@@ -86,43 +86,44 @@ When presented with the prospect of beginning a ballooning program, it
 is easy to become overwhelmed with the choices of available sensors
 and the costs of their given platforms.  Also, many of these platforms
 necessitate the use of proprietary software.  This can create
-a situation where expermental efforts are stymied by the lack of
+a situation where experimental efforts are stymied by the lack of
 control inherent in these sorts of systems.
 
 Another motivation for the creation of HabPi in its present form was
-the loss of a payload in November of 2016.  The first payload launched
+the loss of a payload in November of 2016.  The first HabPi payload launched
 by a joint effort between Maryville College and Pellissippi State
 Community College came to rest at the top of a very large tree in
 Pisgah National Forest.  While the payload was sited, and indeed
 visited on five occasions, all of the precious data from the flight
 was trapped some 65 feet above the ground.  The addition of wireless
-download capabilities was a natural extension of the frustration from
+download capabilities was a natural result of the frustration from
 this all to common event.
 
 \subsection{Educational Use}
-In addition to its use in normal stratospheric flight experiements,
+In addition to its use in normal stratospheric flight experiments,
 HabPi has also proved to be very useful in education.  It was
 developed and refined using input from students at Maryville College
 and Pellissippi State Community College.  In addition to college
-students, HabPi setups have also been constructed by elementary,
-middle, and high school students from Concord Christian Academy.  Boy
-Scout Troop 255 has also built and flown a HabPi payload. As can be
+students, HabPi payloads have also been constructed by elementary,
+middle, and high school students from Concord Christian School.  Boy
+Scout Troop 255 also built and flew a HabPi payload. As can be
 expected, the students were all very excited to participate in
 a stratospheric flight.
 
 In addition to collecting stratospheric data, the default setup of
 a HabPi system works well as a ground based weather station.
 Curricula including weather experiments culminating in a stratospheric
-flight are currently under devlopment, and will hopefully be the topic
+flight are currently under development, and will hopefully be the topic
 of a future paper.
 
 \subsection{Organization of this Paper}
-This paper is organized as follows.  First, the construction of the
-HabPi payload is outlined.  This includes both the sensor hardware and
-the recommended box dimensions.  Following the construction section is
-a detailed description of the HabPi software, including both setup and
-operation.  The final two sections of the paper present flight data
-and some concluding remarks about the performance of the HabPi system. 
+The remainder of this paper is organized as follows.  First, the
+construction of the HabPi payload is outlined.  This includes both the
+sensor hardware and the recommended box dimensions.  Following the
+construction section is a detailed description of the HabPi software,
+including both setup and operation.  The final two sections of the
+paper present flight data and some concluding remarks about the
+performance of the HabPi system. 
 
 \section{Construction}
 The HabPi setup consists of four principal components:
@@ -135,7 +136,7 @@ The HabPi setup consists of four principal components:
 A complete parts list for the electronics, along with approximate
 cost, can be found in Table~\ref{tab:parts}.
 
-The Raspberry Pi computer is designed to be a friendly linux based
+The Raspberry Pi computer is designed to be a friendly Linux based
 system which is easily programmable.  Of particular interest is the
 presence of both USB ports and an array of programmable GPIO (General
 Purpose IO) pins.  This allows the Raspberry Pi to serve as both
@@ -190,14 +191,14 @@ the following features:
 
 Of course, the temperature ranges provided by the Sense HAT are not
 sufficient for recording stratospheric temperatures.  Moreover,
-because the SenseHat itself becomes warm during normal operations, the
+because the Sense HAT itself becomes warm during normal operations, the
 temperatures read by the Sense HAT will tend to be higher than the
 ambient temperature~\cite{SenseHat-API}.  To combat this, the standard
 HabPI setup uses 3 DS18B20 1-wire thermometers which have an
 advertised temperature range of $-55\celsius$ to
 $+125\celsius$~\cite{DS18B20}.
 
-\subsection{Wiring the Sense Hat}
+\subsection{Wiring the Sense HAT}
 \begin{figure}
     \centering
     \begin{subfigure}{.45\textwidth}
@@ -218,13 +219,15 @@ $+125\celsius$~\cite{DS18B20}.
 \end{figure}
 
 Out of the box, the Sense HAT has a connector which fits over all of
-the Raspberry Pi's GPIO pins.  This is undesriable for two reasons.
+the Raspberry Pi's GPIO pins.  This is undesirable for two reasons.
 First, this means no further GPIO hardware can be added.  Second, and
 most importantly, the heat from the Raspberry Pi will dramatically
-increase the temperature read by the Sense HAT.  Fortunately, only
-seven connections are actually necessary.  These connections are shown
+increase the temperature read by the Sense HAT.  Fortunately, this
+connector can be removed by simply pulling it out of the Sense HAT.
+To wire the Sense HAT, only seven connections are actually necessary.
+These connections are shown
 in Figure \ref{fig:pinout}, with figure \ref{fig:hatwiring} showing
-the correpsonding orientation of the Sense HAT.  These connections are
+the corresponding orientation of the Sense HAT.  These connections are
 made using Male/Female jumper wires.
 
 \subsection{Wiring the 1-Wire Sensor Array}
@@ -237,11 +240,10 @@ made using Male/Female jumper wires.
 The DS18B20 1-wire sensors share a common data line which is connected
 to a pull-up resistor.  It should be noted that any number of 1-wire
 sensors can share this single pull-up resistor.  The power and ground
-of each of the sensors is connected to the 3v3 line on the Raspberry
-Pi and all GND connections are connected to the Raspberry Pi ground.
+of each of the sensors is connected to the 3v3 and GND line on the Raspberry
+Pi respectively.
 This circuit is built on a solderless breadboard using the jumper
-wires.  The schematic for this circuit is shown in
-Figure~\ref{fig:circuit}. 
+wires according to the schematic shown in Figure~\ref{fig:circuit}. 
 
 \subsection{Box Dimensions and Mounting}
 \begin{figure}
@@ -258,7 +260,7 @@ Figure~\ref{fig:circuit}.
     \end{subfigure}
     \caption{Mounting the Electronics}
 \end{figure}
-The recommended enclosure for HabPi has exterier dimensions of
+The recommended payload enclosure for HabPi has exterior dimensions of
 $8"\times8"\times8"$ and interior dimensions of $6"\times6"\times6"$.
 This provides ample room to mount the base setup and still access the
 display and power ports of the Raspberry Pi.  This also provides
@@ -277,7 +279,7 @@ Figure~\ref{fig:top} shows the positioning of the Sense HAT along with
 markings for the wire mount holes.
 
 The camera is mounted in the same fashion on the outside of the box.
-This can be positioned wherever is desired.  Also, tape should be
+This can be positioned wherever the user desires.  Also, tape should be
 applied to the ribbon cable to secure it to the outside of the box.
 One advantage of using the Raspberry Pi camera in this fashion is that
 it does not require large holes to be cut into the insulation of the
@@ -288,7 +290,7 @@ dangle freely.  The suggested way to fly these sensors is with two on
 the outside of the box and one on the inside of the box in order to
 measure the efficacy of the insulation\footnote{This can be
 a source of friendly competition when working with groups of
-gradeschool students! The winner is the group who's box stays warmer.}.
+grade-school students! The winner is the group who's box stays warmer.}.
 
 \section{HabPi Software}
 The HabPi software is a series of python scripts which form
@@ -309,7 +311,7 @@ are as follows:
         \item[scripts/] Utility scripts for the HabPi system.
         \item[experiments/] The experiment scripts to be executed when
         HabPi collects data.
-        \item[examples/] Example Expermiment Scripts
+        \item[examples/] Example Experiment Scripts
         \begin{description}
             \item[flash.py] A script which causes the LEDs
             on the Sense HAT 3 hours after activation.  (Useful for
@@ -332,12 +334,12 @@ are as follows:
 \end{description}
 
 Whenever HabPi records data, it creates a new directory under the
-data folder named {\em date}-{\em unix timestamp}.  Thus any number of
+data folder named {\em date}-{\em Unix timestamp}.  Thus any number of
 recordings can be stored, space allowing.
 
 \subsection{Raspberry Pi Setup}
 The first step in setting up HabPi is to prepare the Raspberry Pi.
-To do this, install Raspbian and then set up the localisation options.
+To do this, install Raspbian and then set up the localization options.
 Change the default password, and then activate both the camera and ssh
 interfaces.  Finally, install {\em hostapd} and {\em dnsmasq}.  These
 last two are needed to allow the Raspberry Pi to act as a wifi access
@@ -354,22 +356,22 @@ The primary configuration for HabPi is located in the file {\tt
 HabPi/config.py}.  The default configuration is to have HabPi act as
 an access point with the SSID of ``SkyNet'' and the password of
 ``Terminat0r''. This can be changed, however.  When running as an
-access point, no wifi internet connection is possible.  The Raspberry
-Pi can still be connected to the internet via wired ethernet, however.
+access point, no wifi internet connection is possible, but the Raspberry
+Pi can still be connected to the internet via wired ethernet.
 Setting the {\tt accessPoint} variable to {\tt False} will cause the
 system to use client mode wifi instead.  
 
 \subsection{Creating Experiments}
-The final step in preparing to fly is to set up experiments.  Any
+The final step in preparing to fly is to create the experiments.  Any
 file ending in {\tt.py} contained in the experiments folder will be
 executed in its own thread when data recording begins.  What these
-experiments do is completely freeform.  A good first step would be to
+experiments do is completely free form, but a good first step would be to
 copy examples into the experiments folder.  It should be noted that
-the video and timelapse examples are mutually exclusive.  The system
+the video and time lapse examples are mutually exclusive.  The system
 cannot do both at once due to the limitations of the Raspberry Pi
 camera API.
 
-When creating experiments, they should import the "HabPi" module.
+Experiments should import the "HabPi" module.
 This module provides the following information:
 \begin{description}
     \item[HabPi.sense] The Sense HAT object.  This should be used
@@ -382,15 +384,15 @@ This module provides the following information:
     communication.
 \end{description}
 
-Once the experiments are in place, HabPi is ready to run!
+Once the experiments are in place, HabPi is ready to run.
 
 \subsection{HabPi User Interface}
-When the system reboots, HabPi will automatically start.  The LED's
+When the system reboots, HabPi will automatically start.  The LEDs
 will begin flashing a question mark ``?'', as a prompt.  There are
 then two ways to interact with HabPi. 
 
 \subsubsection{Sense HAT Joystick}
-Pressing Up on the joystick will cause HabPi to enter ``Date Set''
+Pressing up on the joystick will cause HabPi to enter ``Date Set''
 mode.  This will allow the date to be set using the joystick one digit
 at a time.  Pressing right on the joystick allows the user to enter
 the current time.  Pressing left on the joystick will display the
@@ -399,21 +401,23 @@ lacks a real time clock.  (Adding one is a fun project, but by default
 there is not one present.)  Thus it needs to have its time reset every
 reboot. Pressing down on the joystick will cause HabPi to count down.
 It will display the sequence 3, 2, 1.  Pressing the joystick during
-the countdown will cancel the recording.  Otherwise HabPi will flash
-an ``R'' to indicate that it has started recording data.
+the count down will cancel the recording and return to the prompt.
+Otherwise HabPi will flash an ``R'' to indicate that it has started
+recording data.
 
 \subsubsection{Built-In webserver}
 Another option for controlling HabPi is via its built-in webserver.
 Using a mobile device, join HabPi's network.  From there visit {\tt
-http://172.24.1.1:8080}.  From here, the user can set HabPi's time, start
+http://172.24.1.1:8080} which provides the user with an interface
+which can set HabPi's time, start
 the experiments, stop the experiments, and download data.
 
 \section{Performance and Flight Data}
 The data in this section are from a stratospheric flight which took
 place on October 7, 2017.  The balloon was released from Athens, TN 
-at approximately 14:00 UTC and the payload was recoverd in 
+at approximately 14:00 UTC and the payload was recovered in 
 Knoxville, TN four hours later.  The balloon reached a peak altitude
-of 82,789 feet according to the Iridium sattelite tracker which was
+of 82,789 feet according to the Iridium satellite tracker which was
 part of the payload stack.
 
 \subsection{Temperature Data}
@@ -448,7 +452,7 @@ point which differs by more that $5\celsius$ from the previous data
 point.  
 
 As is predicted by the documentation of the Sense HAT, these
-temperatures are warmer than the temperature captured by the DS18B20
+temperatures are warmer than the temperatures captured by the DS18B20
 sensors.  Also, note that the DS18B20 sensors were painted white to
 reduce solar heating.  The Sense HAT sensors cannot be painted as this
 will interfere with their pressure and humidity readings.
@@ -473,7 +477,7 @@ based on readily available components.  It is simple to build, so much
 so that it can be assembled by children, but it is also robust enough
 to produce usable data.  Because the software is completely open
 source, the user can alter all of the data collection routines to
-suite their needs.  For example, one such extension is to overlay the
+suit their needs.  For example, one such extension is to overlay the
 current pressure altitude on the captured video files, as seen in
 Figure~\ref{fig:peak}.  The Raspberry Pi itself offers additional
 1-wire capabilities as well as many available GPIO pins and USB ports.  
@@ -481,7 +485,7 @@ Figure~\ref{fig:peak}.  The Raspberry Pi itself offers additional
 Future work will include the development of curricula for using HabPi
 in classrooms, as well as more experiments driven by this framework.
 
-\section{Acknowledgements}
+\section{Acknowledgments}
 The author would like to acknowledge Sarah Graham and the students of
 Pellissippi State Community College for providing multiple
 opportunities to build and fly HabPi payloads.  Special thanks to the
