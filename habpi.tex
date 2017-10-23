@@ -233,7 +233,7 @@ made using Male/Female jumper wires.
 \subsection{Wiring the 1-Wire Sensor Array}
 \begin{figure}
     \centering
-    \includegraphics[height=3.5in]{images/ds18b20-circuit}
+    \includegraphics[height=3.0in]{images/ds18b20-circuit}
     \caption{DS18B20 1-Wire Circuit}
     \label{fig:circuit}
 \end{figure}
@@ -439,13 +439,14 @@ part of the payload stack.
         \label{fig:smooth}
     \end{subfigure}
     \caption{Temperature Data}
+    \label{fig:temperatureData}
 \end{figure}
 
 The temperature data from this flight shows one of the key challenges
 to using Sense HAT data.  The Sense HAT readings tend to be very
 noisy, as can be seen in Figure~\ref{fig:rawtemp}.  The DS18B20
 sensors, on the other hand, produce very clean information, as can be
-seen in Figure~\ref{fig:ds18b20-data}.  Fortunately, smoothing the
+seen in Figure~\ref{fig:ds18b20-temp}.  Fortunately, smoothing the
 Sense HAT data is fairly simple.  The filter applied in
 Figure~\ref{fig:smooth} is accomplished by simply excluding any data
 point which differs by more that $5\celsius$ from the previous data
@@ -466,7 +467,7 @@ computed to be 85,388 feet.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{images/peak-altitude}
+    \includegraphics[width=0.65\linewidth]{images/peak-altitude}
     \caption{Peak Altitude with Overlay}
     \label{fig:peak}
 \end{figure}
