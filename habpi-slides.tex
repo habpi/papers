@@ -18,7 +18,7 @@
 
 \newcommand{\imagesource}[1]{{\centering\hfill\break\hbox{\scriptsize Image Source:\thinspace{\small\itshape #1}}\par}}
 
-\title{Beamer Template for MC}
+\title{HabPi: A Simple Framework for High Altitude Sensing}
 
 
 \author{Robert Lowe\\}
@@ -29,7 +29,7 @@
   Maryville College
 }
 
-\date[]{}
+\date[]{October 27, 2017}
 \subject{}
 
 \pgfdeclareimage[height=0.5cm]{university-logo}{images/Maryville-College}
@@ -72,47 +72,89 @@
 %   you think necessary.
 % - If you omit details that are vital to the proof/implementation,
 %   just say so once. Everybody will be happy with that.
+\section{Introduction}
 
-\section{}
-\begin{frame}
-  \frametitle{Normal Frame}
-  \begin{itemize}
-    \item item 1
-    \item item 2
-  \end{itemize}
+\section{HabPi}
+
+\section{HabPi Flights}
+\begin{frame}{HabPi 1 - November 18, 2016}
+    \begin{itemize}[<+->]
+        \item The first unteathered flight of the PSCC/MC Balloon
+          Team
+        \item HabPi payload was constructed by the students of
+        Maryville College
+        \item Released from PSCC Hardin Valley Campus in Knoxville, TN
+        \item Reached an altitude of approximately 30,000 meters
+        \item Came to rest in Pisgah National Forest near Blowing
+           Rock, NC
+    \end{itemize}
+\end{frame}
+\begin{frame}{HabPi 1 - November 18, 2016}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.75\textheight]{images/HabPi1_1}
+        \caption{HabPi 1 in Tree}
+    \end{figure}
 \end{frame}
 
+\begin{frame}[t]{HabPi 2 - March 19, 2017}
+    \begin{columns}[t]
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item Reference HabPi device built by Robert Lowe
+            \item Released from Russell Springs Kentucky
+            \item Reached an Altitude of 42,000 Meters
+            \item Recovered near New River, TN
+        \end{itemize}
 
-\begin{frame}[fragile]
-  \frametitle{code frame}
-  \begin{block}{multsh}
-\begin{verbatim}
-...
-#start the scr server
-busybox telnetd -p 1337 -l multsh-login
-
-#start the screen session
-screen -S multsh
-
-#shutdown once screen exits
-killall busybox
-\end{verbatim}
-  \end{block}
+        \column{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[height=0.6\textheight]{images/habpi2_track}
+            \caption{\tiny HabPi 2 Spot Tracker}
+        \end{figure}
+    \end{columns}
 \end{frame}
 
-
-\begin{frame}
-  \frametitle{multicolumn}
-  \begin{columns}
-  \column{0.5\textwidth}
-  \begin{block}{left}
-  \end{block}
-  \column{0.5\textwidth}
-  \begin{block}{right}
-  \end{block}
-  \end{columns}
+\begin{frame}{HabPi 2 - March 19, 2017}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/habpi2_1}
+    \end{figure}
 \end{frame}
 
+\begin{frame}{HabPi 2 - March 19, 2017}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/habpi2_2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{HabPi 2 - March 19, 2017}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/habpi2_3}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{HabPi 2 - March 19, 2017}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/habpi2_4}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{HabPi 3 - May 13, 2017}
+%Sunbright, Troop 255, CCS
+\end{frame}
+
+\begin{frame}{HabPi 4 - July 18, 2017}
+%ARC Summer Institute
+\end{frame}
+
+\begin{frame}{HabPi 5 - October 7, 2017}
+%Athens TN
+\end{frame}
 
 \end{document}
 
