@@ -15,6 +15,9 @@
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
 \usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{amsmath}
+\usepackage{cite}
 
 \newcommand{\imagesource}[1]{{\centering\hfill\break\hbox{\scriptsize Image Source:\thinspace{\small\itshape #1}}\par}}
 
@@ -73,12 +76,16 @@
 % - If you omit details that are vital to the proof/implementation,
 %   just say so once. Everybody will be happy with that.
 \section{Introduction}
+\begin{frame}{Motivation}
+	\begin{itemize}
+	\item The Pellissippu State eclipse team needed practice.
+	\item We needed an inexpensive, extensible payload.
+	\item We wanted a payload simple ebough to be assembled by gradeschool students.
+	\end{itemize}
+\end{frame}
 
-\section{HabPi}
-
-\section{HabPi Flights}
 \begin{frame}{HabPi 1 - November 18, 2016}
-    \begin{itemize}[<+->]
+	\begin{itemize}
         \item The first unteathered flight of the PSCC/MC Balloon
           Team
         \item HabPi payload was constructed by the students of
@@ -96,6 +103,70 @@
         \caption{HabPi 1 in Tree}
     \end{figure}
 \end{frame}
+
+\section{HabPi}
+
+\begin{frame}{Parts List}
+\begin{table}
+    \begin{center}
+    \begin{tabular}{l|r}
+        {\bf Item} & {\bf Approximate Cost}\\
+        \hline
+        Raspberry PI 3 Model B. & \$35.00\\
+        Sense HAT & \$30.00\\
+        Raspberry Pi Camera V2& \$30.00\\
+        32GB Micro SD Card & \$15.00\\
+        3 $\times$ DS18B20 Digital Thermometers & \$9.00\\
+        4.7k$\Omega$ 1/4 W Resistor & \$0.10\\
+        30 Row self-adhesive breadboard & \$5.00\\
+        4400 mAh USB Battery (Cell Phone Charger) & \$10.00\\ 
+        20 pack of Male/Female Jumper Wires & \$3.00\\
+        300mm Ribbon Cable for Pi Camera & \$2.00\\
+        \hline
+        {\bf Total} & {\bf\$139.10} \\
+    \end{tabular}
+    \caption{Parts List}
+    \label{tab:parts}
+    \end{center}
+\end{table}
+\end{frame}
+
+\begin{frame}{Sensor Limits}
+\begin{itemize}
+    \item Two Digital Thermometers ($-40 \celsius$ to $+120 \celsius$)
+    \cite{HTS221} and ($-30 \celsius$ to $+105 \celsius$)\cite{LPS25H}
+    \item Barometric Pressure Sensor (260 to 1260 hPa) ~\cite{LPS25H}
+    \item Relative Humidity Sensor ($0\%$ to $100\%$)~\cite{HTS221}
+    \item 3-Axis Magnetometer ($\pm 16$ gauss)~\cite{LSM9DS1}
+    \item 3-Axis Gyroscope ($\pm 2000$ dps)~\cite{LSM9DS1}
+    \item 3-Axis Accelerometer ($\pm 16$g)~\cite{LSM9DS1}
+    \item Joystick for Input
+    \item RGB LED Array for Output
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Wiring the Sense HAT}
+\end{frame}
+
+\begin{frame}{1-Wire Bus}
+\end{frame}
+
+\begin{frame}{Complete Interior}
+\end{frame}
+
+\begin{frame}{HabPi Software}
+\end{frame}
+
+\begin{frame}{Raw Temperature Data}
+\end{frame}
+
+\begin{frame}{1-Wire Data}
+\end{frame}
+
+\begin{frame}{Smoothed Temperature Data}
+\end{frame}
+
+\section{HabPi Flights}
 
 \begin{frame}[t]{HabPi 2 - March 19, 2017}
     \begin{columns}[t]
@@ -154,6 +225,11 @@
 
 \begin{frame}{HabPi 5 - October 7, 2017}
 %Athens TN
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Bibliography}
+	\bibliographystyle{plain}
+	\bibliography{citations}
 \end{frame}
 
 \end{document}
