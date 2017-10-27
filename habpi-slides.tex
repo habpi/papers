@@ -18,6 +18,7 @@
 \usepackage{gensymb}
 \usepackage{amsmath}
 \usepackage{cite}
+\usepackage{subcaption}
 
 \newcommand{\imagesource}[1]{{\centering\hfill\break\hbox{\scriptsize Image Source:\thinspace{\small\itshape #1}}\par}}
 
@@ -78,15 +79,15 @@
 \section{Introduction}
 \begin{frame}{Motivation}
 	\begin{itemize}
-	\item The Pellissippu State eclipse team needed practice.
+	\item The Pellissippi State eclipse team needed practice.
 	\item We needed an inexpensive, extensible payload.
-	\item We wanted a payload simple ebough to be assembled by gradeschool students.
+	\item We wanted a payload simple enough to be assembled by grade-school students.
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{HabPi 1 - November 18, 2016}
 	\begin{itemize}
-        \item The first unteathered flight of the PSCC/MC Balloon
+        \item The first untethered flight of the PSCC/MC Balloon
           Team
         \item HabPi payload was constructed by the students of
         Maryville College
@@ -131,7 +132,7 @@
 \end{table}
 \end{frame}
 
-\begin{frame}{Sensor Limits}
+\begin{frame}{Sense HAT Sensor Limits}
 \begin{itemize}
     \item Two Digital Thermometers ($-40 \celsius$ to $+120 \celsius$)
     \cite{HTS221} and ($-30 \celsius$ to $+105 \celsius$)\cite{LPS25H}
@@ -146,24 +147,74 @@
 \end{frame}
 
 \begin{frame}{Wiring the Sense HAT}
+\begin{figure}
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[height=0.7\textheight]{images/rpi-sensehat}
+        \caption{Minimal Raspberry Pi Sense HAT
+        Connections~\cite{pinout}}
+        \label{fig:pinout}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/sensehat}
+        \caption{Sense Hat Connections}
+        \label{fig:hat}
+    \end{subfigure}
+    \caption{Wiring the Sense Hat}
+    \label{fig:hatwiring}
+\end{figure}
 \end{frame}
 
 \begin{frame}{1-Wire Bus}
+\begin{figure}
+    \centering
+    \includegraphics[height=0.6\textheight]{images/ds18b20-circuit}
+    \caption{DS18B20 1-Wire Circuit}
+    \label{fig:circuit}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Complete Interior}
+\begin{figure}
+	\centering
+        \includegraphics[height=0.75\textheight]{images/interior}
+	\caption{HabPi Interior}
+\end{figure}
 \end{frame}
 
 \begin{frame}{HabPi Software}
+	\begin{itemize}
+	\item Creates an access point with a configurable network for wireless data access
+	\item Provides a simple user interface using the SenseHat
+	\item Creates a time-labeled data directory under {\tt /home/pi/habpi/data}
+	\item Executes experiments contained in {\tt /home/pi/habpi/experiments}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Raw Temperature Data}
+	\begin{figure}
+		\centering
+		\includegraphics[height=0.75\textheight]{images/rawtemp}
+		\caption{Raw Temperature Data}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{1-Wire Data}
+	\begin{figure}
+		\centering
+		\includegraphics[height=0.75\textheight]{images/ds18b20-data}
+		\caption{DS18B20 Temperature Data}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Smoothed Temperature Data}
+	\begin{figure}
+		\centering
+		\includegraphics[height=0.75\textheight]{images/smoothtemp}
+		\caption{Smoothed Temperature Data}
+	\end{figure}
 \end{frame}
 
 \section{HabPi Flights}
@@ -216,15 +267,102 @@
 \end{frame}
 
 \begin{frame}{HabPi 3 - May 13, 2017}
-%Sunbright, Troop 255, CCS
+    \begin{columns}[t]
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item 3 HabPi Payloads constructed by students from Concord Christian School
+            \item 1 HabPi Payload constructed by BSA Troop 255
+	    \item Released in Sunbright TN
+            \item Reached an Altitude of 27,000 Meters 
+	    \item Flew through restricted air space at low altitude
+        \end{itemize}
+
+        \column{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[height=0.6\textheight]{images/habpi3_track}
+            \caption{\tiny HabPi 3 Spot Tracker}
+        \end{figure}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{HabPi 3 - May 13, 2017}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.7\textheight]{images/CCS_Payload}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{HabPi 3 - May 13, 2017}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/Troop255_Electronics}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{HabPi 3 - May 13, 2017}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/lion}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{HabPi 4 - July 18, 2017}
-%ARC Summer Institute
+    \begin{columns}[t]
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item Constructed by students in the ARC ORNL Summer Institute
+	    \item First HabPi to carry adequate battery power for download
+	    \item Released from Pellissippi State Community College
+            \item Reached an Altitude of 27,000 Meters 
+	    \item Recovered lying neatly beside a farm road
+        \end{itemize}
+
+        \column{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.75\textwidth]{images/linda}
+            \caption{\tiny Linda}
+        \end{figure}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{HabPi 5 - October 7, 2017}
-%Athens TN
+    \begin{columns}[t]
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item First flight of a revised HabPi payload
+	    \item Released from Athens, TN
+            \item Reached an Altitude of 25,000 Meters 
+	    \item Recovered from a power line in Knoxville, TN
+	    \item Successful test of wireless data download
+        \end{itemize}
+
+        \column{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{images/peak-altitude}
+            \caption{\tiny HabPi 5 - Peak Altitude}
+        \end{figure}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Future Directions}
+	\begin{columns}
+		\column{0.6\textwidth}
+		\begin{itemize}
+		\item Develop a School Curriculum for HabPi
+		\item Improved User Interfaces
+		\item A detailed write-up of HabPi construction and flight procedures
+		\end{itemize}
+
+		\column{0.4\textwidth}
+		\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{images/habpiGithub}
+		\caption{\tiny \tt http://github.com/pngwen/habpi}
+		\end{figure}
+	\end{columns}
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Bibliography}
